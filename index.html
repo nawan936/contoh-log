@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login BKN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+        .login-container h2 {
+            text-align: center;
+            color: #aeabab;
+            font-style: oblique;
+        }
+        .login-container img {
+            max-width: 100%; /* Responsive image */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 15px; /* Space below the image */
+        }
+        .login-container input {
+            width: 290px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #218838;
+        }
+        .toggle-password {
+            cursor: pointer;
+            position: relative;
+            top: -39px; /* Adjust based on input height */
+            right: 0.5px;
+            left: 285px;
+            color: #488fdb;
+            font-size: 14px;
+
+        
+    </style>
+</head>
+<body>
+
+   
+    
+
+<div class="login-container">
+    <img src="bkn-logo.png" alt="Logo BKN">
+    <h2>Login BKN</h2>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+        <input type="text" id="nik" placeholder="NIK" required>
+        <input type="text" id="noPeserta" placeholder="No Peserta" required>
+        <div style="position: relative;">
+            <input type="password" id="pin" placeholder="PIN" required>
+            <span class="toggle-password" onclick="togglePassword('pin')"><ion-icon name="lock-closed-outline"></ion-icon></span>
+        </div>
+        <div style="position: relative;">
+            <input type="password" id="pinSesi" placeholder="PIN Sesi" required>
+            <span class="toggle-password" onclick="togglePassword('pinSesi')"><ion-icon name="lock-closed-outline"></ion-icon></span>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    function togglePassword(inputId) {
+        const input = document.getElementById(inputId);
+        if (input.type === "password") {
+            input.type = "text";
+        } else {
+            input.type = "password";
+        }
+    }
+
+    function handleLogin(event) {
+        event.preventDefault(); // Mencegah reload halaman
+        // Logika untuk memverifikasi login dapat ditambahkan di sini
+        // Setelah login berhasil, arahkan ke halaman YouTube
+        window.location.href = 'https://casn.privatalfaiz.id/#!/tryout-ku/paket/1019900'; // Arahkan ke YouTube
+    }
+</script>
+
+</body>
+</html>
